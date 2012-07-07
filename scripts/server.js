@@ -63,7 +63,7 @@ function shipyardFile(res, uri) {
 	var root = path.join(__dirname, '../');
 	var syFile = uri.substring(9);
 	var filename = path.join(root, syFile);
-	path.exists(filename, function(exists) {
+	fs.exists(filename, function(exists) {
 		if (exists) {
 			serveFile(res, filename);
 		} else {
@@ -83,7 +83,7 @@ exports.serve = function(dir, port) {
 		}
 
 		var filename = path.join(ROOT, uri);
-		path.exists(filename, function(exists) {
+		fs.exists(filename, function(exists) {
 			if (exists) {
 				serveFile(res, filename);
 			} else if (uri.indexOf('/shipyard') === 0) {
