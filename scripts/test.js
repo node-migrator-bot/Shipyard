@@ -1,7 +1,7 @@
 /*global process: true*/
 var fs = require('fs'),
 	path = require('path'),
-	existsSync = fs.existsSync || path.existsSync, // path deprecated in v0.6
+	existsSync = fs.existsSync || fs.existsSync, // path deprecated in v0.6
 	Testigo = require('../test/testigo').Testigo;
 
 function namespace(prefix, module) {

@@ -1,7 +1,7 @@
 /*global __dirname,console*/
 var fs = require('fs'),
 	path = require('path'),
-	existsSync = fs.existsSync || path.existsSync,
+	existsSync = fs.existsSync || fs.existsSync,
 	EJS = require('../lib/shipyard/template/ejs/Template'),
 	pageTemplate = require('../doc/_template/page.ejs'),
 	shipyard = require('../'),

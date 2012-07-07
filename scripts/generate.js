@@ -24,7 +24,7 @@ var model = exports.model = function(name, dir) {
 	name = modelName(name);
 	dir = path.join(dir || process.cwd, 'models');
 
-	if (!path.existsSync(dir)) {
+	if (!fs.existsSync(dir)) {
 		fs.mkdirSync(dir, dirMode);
 	}
 
@@ -42,7 +42,7 @@ var app = exports.app = function(name, dir) {
 
 	//1. Make directory
 	console.log('Creating directory...');
-	assert(!path.existsSync(dir), 'App directory already exists: ', dir);
+	assert(!fs.existsSync(dir), 'App directory already exists: ', dir);
 	fs.mkdirSync(dir, dirMode);
 
 	//2. Make package.json
